@@ -17,6 +17,7 @@ func _process_custom_fx(char_fx):
 	var dirty_time = char_fx.env.get("dirty", 1.0)
 	var text_span = char_fx.env.get("span", 50)
 	var speed = char_fx.env.get("speed", 1.0)
+	var glyph_list = get_text_server().font_get_supported_chars(char_fx.font)
 
 	var value = char_fx.glyph_index
 
@@ -27,8 +28,8 @@ func _process_custom_fx(char_fx):
 				  (matrix_time - clear_time) / dirty_time
 
 	if matrix_time > 0.0:
-		value = int(speed * matrix_time * (126 - 65) + value)
-		value %= (126 - 65)
-		value += 65
-		char_fx.glyph_index = get_text_server().font_get_glyph_index(char_fx.font, 1, value, 0)
+		var size = glyph_list.length()
+		value = int(speed * matrix_time * 7.6543) * 0x31337 + value
+		value %= size
+		char_fx.glyph_index = get_text_server().font_get_glyph_index(char_fx.font, 1, glyph_list.unicode_at(value), 0)
 	return true
