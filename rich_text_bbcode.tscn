@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://oeg5vj7lpjw0"]
+[gd_scene load_steps=9 format=3 uid="uid://oeg5vj7lpjw0"]
 
 [ext_resource type="Script" path="res://rich_text_bbcode.gd" id="1"]
 [ext_resource type="Script" path="res://rich_text_ghost.gd" id="2_ud7cv"]
+[ext_resource type="Script" path="res://rich_text_matrix.gd" id="3_b2nbq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1hwu"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_qpjrg"]
 script = ExtResource("2_ud7cv")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_42avl"]
+script = ExtResource("3_b2nbq")
 
 [sub_resource type="InputEventAction" id="InputEventAction_eu7pn"]
 action = &"toggle_pause"
@@ -66,9 +70,11 @@ text = "Several effects are also available:
 
 [rainbow freq=0.4 val=1 sat=1]Rainbow[/rainbow]
 
-[ghost freq=5.0 span=10.0]Ghost[/ghost]"
+[ghost freq=5.0 span=10.0]Ghost[/ghost]
+
+[matrix clean=2.0 dirty=1.0 span=50 speed=1]Matrix[/matrix]"
 context_menu_enabled = true
-custom_effects = [SubResource("RichTextEffect_qpjrg")]
+custom_effects = [SubResource("RichTextEffect_qpjrg"), SubResource("RichTextEffect_42avl")]
 selection_enabled = true
 
 [node name="Pause" type="Button" parent="."]
