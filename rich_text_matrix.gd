@@ -27,8 +27,8 @@ func _process_custom_fx(char_fx):
 				  (matrix_time - clear_time) / dirty_time
 
 	if matrix_time > 0.0:
-		value = int(speed * matrix_time * (126 - 65))
+		value = int(speed * matrix_time * (126 - 65) + value)
 		value %= (126 - 65)
 		value += 65
-	char_fx.glyph_index = get_text_server().font_get_glyph_index(char_fx.font, 1, value, 0)
+		char_fx.glyph_index = get_text_server().font_get_glyph_index(char_fx.font, 1, value, 0)
 	return true
