@@ -2,6 +2,8 @@
 extends RichTextEffect
 class_name RichTextOcean
 
+const NoiseUtils = preload("res://noise_utils.gd")
+
 # Syntax: [ocean speed=2 hue=0.14 sat=1.0 val=0.7]Ocean[/ocean]
 
 # Define the tag name.
@@ -16,7 +18,7 @@ func _process_custom_fx(char_fx):
 	var val = char_fx.env.get("val", 0.25)
 	
 	var progress = speed * char_fx.elapsed_time + (char_fx.range.x / float(span))
-
+	
 # ColorUtils.hsl2rgb(NoiseUtils.octaveNoise1D(progress * 5f, 12345) * 0.15f + hue, saturation,
 #                         0.15f - Math.abs(NoiseUtils.noise1D(progress * 3f + progress * progress, -123456789)) * 0.3f + lightness, 1f)
 	char_fx.color = Color.from_ok_hsl(NoiseUtils.octaveNoise1D(progress * 1.5, 12345) * 0.1 + hue, \

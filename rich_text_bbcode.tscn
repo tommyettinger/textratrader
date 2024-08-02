@@ -14,7 +14,7 @@ script = ExtResource("4_yqcjf")
 [sub_resource type="RichTextEffect" id="RichTextEffect_tjnc3"]
 script = ExtResource("3_b2nbq")
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_e10uk"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_4thu7"]
 script = ExtResource("4_pwngp")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_cbtk0"]
@@ -88,7 +88,7 @@ text = "Several effects are also available:
 
 [test]Test[/test]"
 context_menu_enabled = true
-custom_effects = [SubResource("RichTextEffect_64trm"), SubResource("RichTextEffect_tjnc3"), SubResource("RichTextEffect_e10uk"), SubResource("RichTextEffect_cbtk0")]
+custom_effects = [SubResource("RichTextEffect_64trm"), SubResource("RichTextEffect_tjnc3"), SubResource("RichTextEffect_4thu7"), SubResource("RichTextEffect_cbtk0")]
 selection_enabled = true
 
 [node name="Pause" type="Button" parent="."]
