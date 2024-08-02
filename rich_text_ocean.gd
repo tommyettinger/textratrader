@@ -19,8 +19,8 @@ func _process_custom_fx(char_fx):
 	
 	var progress = speed * char_fx.elapsed_time + (char_fx.range.x / float(span))
 	
-# ColorUtils.hsl2rgb(NoiseUtils.octaveNoise1D(progress * 5f, 12345) * 0.15f + hue, saturation,
-#                         0.15f - Math.abs(NoiseUtils.noise1D(progress * 3f + progress * progress, -123456789)) * 0.3f + lightness, 1f)
-	char_fx.color = Color.from_ok_hsl(NoiseUtils.octaveNoise1D(progress * 1.5, 12345) * 0.1 + hue, \
-	 sat, 0.15 - absf(NoiseUtils.octaveNoise1D(progress * 1.6 + sin(progress), -123456789)) * 0.3 + val, char_fx.color.a)
+# ColorUtils.hsl2rgb(NoiseUtils.octave_noise_1d(progress * 5f, 12345) * 0.15f + hue, saturation,
+#                         0.15f - Math.abs(NoiseUtils.noise_1d(progress * 3f + progress * progress, -123456789)) * 0.3f + lightness, 1f)
+	char_fx.color = Color.from_ok_hsl(NoiseUtils.octave_noise_1d(progress * 1.5, 12345) * 0.1 + hue, \
+	 sat, 0.15 - absf(NoiseUtils.octave_noise_1d(progress * 1.6 + sin(progress), -123456789)) * 0.3 + val, char_fx.color.a)
 	return true
