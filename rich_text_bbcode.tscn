@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://oeg5vj7lpjw0"]
+[gd_scene load_steps=15 format=3 uid="uid://oeg5vj7lpjw0"]
 
 [ext_resource type="Script" path="res://rich_text_bbcode.gd" id="1"]
 [ext_resource type="Script" path="res://rich_text_matrix.gd" id="3_b2nbq"]
+[ext_resource type="Script" path="res://rich_text_wind.gd" id="4_1kou6"]
 [ext_resource type="Script" path="res://rich_text_test.gd" id="4_agkr6"]
 [ext_resource type="Script" path="res://rich_text_ocean.gd" id="4_pwngp"]
 [ext_resource type="Script" path="res://rich_text_ghost.gd" id="4_yqcjf"]
@@ -14,11 +15,14 @@ script = ExtResource("4_yqcjf")
 [sub_resource type="RichTextEffect" id="RichTextEffect_tjnc3"]
 script = ExtResource("3_b2nbq")
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_4thu7"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_m32mu"]
 script = ExtResource("4_pwngp")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_cbtk0"]
 script = ExtResource("4_agkr6")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qm247"]
+script = ExtResource("4_1kou6")
 
 [sub_resource type="InputEventAction" id="InputEventAction_eu7pn"]
 action = &"toggle_pause"
@@ -86,9 +90,11 @@ text = "Several effects are also available:
 
 [ocean speed=2 hue=0.14 sat=1.0 val=0.7]FIRE[/ocean]
 
+[wind]Wind[/wind]
+
 [test]Test[/test]"
 context_menu_enabled = true
-custom_effects = [SubResource("RichTextEffect_64trm"), SubResource("RichTextEffect_tjnc3"), SubResource("RichTextEffect_4thu7"), SubResource("RichTextEffect_cbtk0")]
+custom_effects = [SubResource("RichTextEffect_64trm"), SubResource("RichTextEffect_tjnc3"), SubResource("RichTextEffect_m32mu"), SubResource("RichTextEffect_cbtk0"), SubResource("RichTextEffect_qm247")]
 selection_enabled = true
 
 [node name="Pause" type="Button" parent="."]
