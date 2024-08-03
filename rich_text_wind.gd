@@ -4,7 +4,7 @@ class_name RichTextWind
 
 const noise = preload("res://noise_utils.gd")
 
-# Syntax: [wind x=0.8 y=1.5 spacing=1.0 intensity=1.4 flag=false seed=0]Wind[/wind]
+# Syntax: [wind x=1.5 y=1.5 span=20 spacing=1.0 intensity=1.5 flag=true seed=0]Wind[/wind]
 
 # Define the tag name.
 var bbcode = "wind"
@@ -17,9 +17,9 @@ func _process_custom_fx(char_fx):
 	# Get parameters, or use the provided default value if missing.
 	var x_distance = char_fx.env.get("x", 1.5)
 	var y_distance = char_fx.env.get("y", 1.5)
-	var span = 20
+	var span = char_fx.env.get("span", 20)
 	var spacing = char_fx.env.get("spacing", 1.0)
-	var intensity = char_fx.env.get("intensity", 1.4)
+	var intensity = char_fx.env.get("intensity", 1.5)
 	var flag = char_fx.env.get("flag", true)
 	var noise_seed = char_fx.env.get("seed", hash(char_fx))
 	

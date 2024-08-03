@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://oeg5vj7lpjw0"]
+[gd_scene load_steps=17 format=3 uid="uid://oeg5vj7lpjw0"]
 
 [ext_resource type="Script" path="res://rich_text_bbcode.gd" id="1"]
 [ext_resource type="Script" path="res://rich_text_matrix.gd" id="3_b2nbq"]
 [ext_resource type="Script" path="res://rich_text_wind.gd" id="4_1kou6"]
+[ext_resource type="Script" path="res://rich_text_crowd.gd" id="4_3cqmb"]
 [ext_resource type="Script" path="res://rich_text_test.gd" id="4_agkr6"]
-[ext_resource type="Script" path="res://rich_text_ocean.gd" id="4_pwngp"]
+[ext_resource type="Script" path="res://rich_text_ocean.gd" id="4_ajkdw"]
 [ext_resource type="Script" path="res://rich_text_ghost.gd" id="4_yqcjf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1hwu"]
@@ -15,14 +16,17 @@ script = ExtResource("4_yqcjf")
 [sub_resource type="RichTextEffect" id="RichTextEffect_tjnc3"]
 script = ExtResource("3_b2nbq")
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_m32mu"]
-script = ExtResource("4_pwngp")
+[sub_resource type="RichTextEffect" id="RichTextEffect_oc2gl"]
+script = ExtResource("4_ajkdw")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_cbtk0"]
 script = ExtResource("4_agkr6")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_qm247"]
 script = ExtResource("4_1kou6")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ryyeg"]
+script = ExtResource("4_3cqmb")
 
 [sub_resource type="InputEventAction" id="InputEventAction_eu7pn"]
 action = &"toggle_pause"
@@ -56,7 +60,7 @@ anchor_bottom = 1.0
 offset_left = -44.0
 offset_top = -10.0
 offset_right = -44.0
-offset_bottom = -10.0
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 2
@@ -92,9 +96,11 @@ text = "Several effects are also available:
 
 [wind]Wind[/wind]
 
+[crowd intensity=0.25 speed=2 span=40.0 seed=0]Crowd[/crowd]
+
 [test]Test[/test]"
 context_menu_enabled = true
-custom_effects = [SubResource("RichTextEffect_64trm"), SubResource("RichTextEffect_tjnc3"), SubResource("RichTextEffect_m32mu"), SubResource("RichTextEffect_cbtk0"), SubResource("RichTextEffect_qm247")]
+custom_effects = [SubResource("RichTextEffect_64trm"), SubResource("RichTextEffect_tjnc3"), SubResource("RichTextEffect_oc2gl"), SubResource("RichTextEffect_cbtk0"), SubResource("RichTextEffect_qm247"), SubResource("RichTextEffect_ryyeg")]
 selection_enabled = true
 
 [node name="Pause" type="Button" parent="."]
@@ -103,8 +109,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -42.0
-offset_right = 96.0
+offset_left = 735.0
+offset_top = -28.0
+offset_right = 831.0
+offset_bottom = 14.0
 grow_vertical = 0
 toggle_mode = true
 shortcut = SubResource("Shortcut_n2ck8")
