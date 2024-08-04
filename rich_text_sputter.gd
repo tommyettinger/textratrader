@@ -23,11 +23,11 @@ func _process_custom_fx(char_fx):
 	
 	var progress = (char_fx.range.x / float(span))
 	var time = speed * char_fx.elapsed_time + progress
-	var dim = Vector2i(1.0, 1.0)
+	var dim = Vector2i(1, 1)
 	dim = _get_text_server().font_get_glyph_size(char_fx.font, dim, char_fx.glyph_index)
-	var h = noise.octave_noise_1d(time, noise_seed + char_fx.relative_index ^ char_fx.glyph_index + 123456) * 0.5 + 0.5
-	var v = noise.octave_noise_1d(time + 1.618, noise_seed + char_fx.relative_index ^ char_fx.glyph_index + -123456789) * 0.5 + 0.5
+	var h = noise.octave_noise_1d(time, noise_seed + char_fx.relative_index ^ char_fx.glyph_index + 123456)
+	var v = noise.octave_noise_1d(time + 1.618, noise_seed + char_fx.relative_index ^ char_fx.glyph_index + -123456789)
 	char_fx.transform = char_fx.transform.scaled_local(Vector2(
-		h * h * h * x_scale * 3.0 - v * 0.25 + 0.25, \
-		v * v * v * y_scale * 3.0 - h * 0.25 + 0.25) * dim)
+		h * h * h * x_scale * 1.25 - v * 0.125 + 0.25, \
+		v * v * v * y_scale * 1.25 - h * 0.125 + 0.25) * dim)
 	return true

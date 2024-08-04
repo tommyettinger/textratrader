@@ -61,10 +61,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 181.0
-offset_top = -89.0
-offset_right = 181.0
-offset_bottom = -2.0
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 31.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 2
@@ -78,33 +78,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_q1hwu")
 bbcode_enabled = true
 text = "Several effects are also available:
 
-[pulse]Pulse[/pulse]
-
- [wave]Wave[/wave]
-
-[tornado freq=4]Tornado[/tornado]
-
-[shake]Shake[/shake]
-
-[fade start=75 length=7]Fade[/fade]
-
-[rainbow freq=0.4 val=1 sat=1]Rainbow[/rainbow]
-
-[ghost freq=5.0 span=10.0]Ghost[/ghost]
-
-[color=44DD33FF][matrix clean=2.0 dirty=1.0 span=50 speed=1]Matrix[/matrix][/color]
-
-[ocean]Ocean[/ocean]
-
-[ocean speed=2 hue=0.14 sat=1.0 val=0.7]FIRE[/ocean]
-
-[wind]Wind[/wind]
-
-[crowd intensity=0.25 speed=2 span=40.0 seed=0]Crowd[/crowd]
-
-[sputter x=0.25 y=0.25 span=20 speed=1 seed=0]Sputter[/sputter]
-
-[test]Test[/test]"
+[pulse]Pulse[/pulse]								[wave]Wave[/wave]							[tornado freq=4]Tornado[/tornado]							[shake]Shake[/shake]
+[fade start=0 length=5]Fade[/fade]								[rainbow freq=0.4 val=1 sat=1]Rainbow[/rainbow]					[ghost freq=5.0 span=10.0]Ghost[/ghost]								[color=44DD33FF][matrix clean=2.0 dirty=1.0 span=50 speed=1]Matrix[/matrix][/color]
+[ocean]Ocean[/ocean]								[ocean speed=2 hue=0.14 sat=1.0 val=0.7]FIRE[/ocean]								[wind]Wind[/wind]								[crowd intensity=0.25 speed=2 span=40.0 seed=0]Crowd[/crowd]
+[sputter x=0.25 y=0.25 span=20 speed=1 seed=0]Sputter[/sputter]							[test]Test[/test]"
 context_menu_enabled = true
 custom_effects = [SubResource("RichTextEffect_wrp6d"), SubResource("RichTextEffect_2ah24"), SubResource("RichTextEffect_cc3ko"), SubResource("RichTextEffect_q7qa1"), SubResource("RichTextEffect_lxwi4"), SubResource("RichTextEffect_0aowr"), SubResource("RichTextEffect_m1yec")]
 meta_underlined = false
