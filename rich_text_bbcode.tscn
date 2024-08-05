@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://oeg5vj7lpjw0"]
+[gd_scene load_steps=21 format=3 uid="uid://oeg5vj7lpjw0"]
 
 [ext_resource type="Script" path="res://rich_text_bbcode.gd" id="1"]
 [ext_resource type="Script" path="res://rich_text_matrix.gd" id="3_b2nbq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://rich_text_ghost.gd" id="4_yqcjf"]
 [ext_resource type="Script" path="res://rich_text_squash.gd" id="6_bbadj"]
 [ext_resource type="Script" path="res://rich_text_wind.gd" id="8_rkesi"]
+[ext_resource type="Script" path="res://rich_text_sputter.gd" id="9_ghyy5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1hwu"]
 
@@ -31,6 +32,9 @@ script = ExtResource("4_agkr6")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_m1yec"]
 script = ExtResource("8_rkesi")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_dqqvd"]
+script = ExtResource("9_ghyy5")
 
 [sub_resource type="InputEventAction" id="InputEventAction_eu7pn"]
 action = &"toggle_pause"
@@ -83,7 +87,7 @@ text = "Several effects are also available:
 [ocean]Ocean[/ocean]								[ocean speed=2 hue=0.14 sat=1.0 val=0.7]FIRE[/ocean]								[wind]Wind[/wind]								[crowd intensity=0.25 speed=2 span=40.0 seed=0]Crowd[/crowd]
 [sputter]Sputter[/sputter]							[squash]Squash[/squash]							[test]Test[/test]"
 context_menu_enabled = true
-custom_effects = [SubResource("RichTextEffect_wrp6d"), SubResource("RichTextEffect_2ah24"), SubResource("RichTextEffect_cc3ko"), SubResource("RichTextEffect_q7qa1"), SubResource("RichTextEffect_lxwi4"), SubResource("RichTextEffect_0aowr"), SubResource("RichTextEffect_m1yec")]
+custom_effects = [SubResource("RichTextEffect_wrp6d"), SubResource("RichTextEffect_2ah24"), SubResource("RichTextEffect_cc3ko"), SubResource("RichTextEffect_q7qa1"), SubResource("RichTextEffect_lxwi4"), SubResource("RichTextEffect_0aowr"), SubResource("RichTextEffect_m1yec"), SubResource("RichTextEffect_dqqvd")]
 meta_underlined = false
 selection_enabled = true
 
