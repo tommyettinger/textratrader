@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://rich_text_test.gd" id="4_agkr6"]
 [ext_resource type="Script" path="res://rich_text_ocean.gd" id="4_ajkdw"]
 [ext_resource type="Script" path="res://rich_text_ghost.gd" id="4_yqcjf"]
-[ext_resource type="Script" path="res://rich_text_sputter.gd" id="6_5ei62"]
+[ext_resource type="Script" path="res://rich_text_squash.gd" id="6_bbadj"]
 [ext_resource type="Script" path="res://rich_text_wind.gd" id="8_rkesi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1hwu"]
@@ -24,7 +24,7 @@ script = ExtResource("4_ajkdw")
 script = ExtResource("4_3cqmb")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_lxwi4"]
-script = ExtResource("6_5ei62")
+script = ExtResource("6_bbadj")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_0aowr"]
 script = ExtResource("4_agkr6")
@@ -61,10 +61,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = 27.0
-offset_right = 31.0
-offset_bottom = 114.0
+offset_left = 54.0
+offset_top = 50.0
+offset_right = 54.0
+offset_bottom = 137.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 2
@@ -81,7 +81,7 @@ text = "Several effects are also available:
 [pulse]Pulse[/pulse]								[wave]Wave[/wave]							[tornado freq=4]Tornado[/tornado]							[shake]Shake[/shake]
 [fade start=0 length=5]Fade[/fade]								[rainbow freq=0.4 val=1 sat=1]Rainbow[/rainbow]					[ghost freq=5.0 span=10.0]Ghost[/ghost]								[color=44DD33FF][matrix clean=2.0 dirty=1.0 span=50 speed=1]Matrix[/matrix][/color]
 [ocean]Ocean[/ocean]								[ocean speed=2 hue=0.14 sat=1.0 val=0.7]FIRE[/ocean]								[wind]Wind[/wind]								[crowd intensity=0.25 speed=2 span=40.0 seed=0]Crowd[/crowd]
-[sputter x=0.25 y=0.25 span=20 speed=1 seed=0]Sputter[/sputter]							[test]Test[/test]"
+[sputter]Sputter[/sputter]							[squash]Squash[/squash]							[test]Test[/test]"
 context_menu_enabled = true
 custom_effects = [SubResource("RichTextEffect_wrp6d"), SubResource("RichTextEffect_2ah24"), SubResource("RichTextEffect_cc3ko"), SubResource("RichTextEffect_q7qa1"), SubResource("RichTextEffect_lxwi4"), SubResource("RichTextEffect_0aowr"), SubResource("RichTextEffect_m1yec")]
 meta_underlined = false
