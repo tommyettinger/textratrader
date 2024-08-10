@@ -7,7 +7,9 @@
 @tool
 class_name NoiseUtils
 
-## Gets continuous 1D noise given a distance and seed.
+## Gets continuous 1D noise given a distance and seed; has obviously-symmetrical sections.
+##
+## Based on Quilez Basic Noise, [url]https://www.shadertoy.com/view/3sd3Rs[/url].
 ##
 ## x is a 1D distance, and s is any int seed.
 ## You could also use [method octave_noise_1d], which calls this more than once
@@ -22,7 +24,9 @@ static func noise_1d(x: float, s: int) -> float:
     x *= x - 1.0;
     return rise * x * x * h;
 
-## Gets higher-quality continuous 1D noise given a distance and seed.
+## Gets higher-quality continuous 1D noise given a distance and seed, using [method noise_1d].
+##
+## Based on Quilez Basic Noise, [url]https://www.shadertoy.com/view/3sd3Rs[/url].
 ##
 ## x is a 1D distance, and s is any int seed.
 ## This uses 1 or more calls to [method noise_1d] using different frequencies,
@@ -32,9 +36,11 @@ static func octave_noise_1d(x: float, s: int, octaves: int = 2) -> float:
     octaves = max(1, octaves)
     for n in range(octaves - 1, -1, -1):
         noise += noise_1d(x, s + n) * (1 << n);
-        x *= 1.9
+        x = (x + 1.618) * 1.9
     return noise / ((1 << octaves) - 1.0)
 
+## Gets continuous 1D noise given a distance and seed; very smooth.
+##
 ## Sway smoothly using bicubic interpolation between 4 points (the two integers before t and the two after).
 ## This pretty much never produces steep changes between peaks and valleys; this may make it more useful for things
 ## like generating terrain that can be walked across in a side-scrolling game.
@@ -66,3 +72,17 @@ static func wobble(t: float, s: int) -> float:
     # it gets us about as close as we can go to 1.0 .
     return (t * (t * t * p + t * (a - b - p) + c - a) + b) * 7.228014E-20
 
+## Gets higher-quality continuous 1D noise given a distance and seed, using [method wobble].
+##
+## x is a 1D distance, and s is any int seed.
+## This uses 1 or more calls to [method noise_1d] using different frequencies,
+## and amplitudes which are called "octaves."
+static func octave_wobble(x: float, s: int, octaves: int = 2) -> float:
+    var noise = 0.0
+    octaves = max(1, octaves)
+    for n in range(octaves - 1, -1, -1):
+        noise += noise_1d(x, s) * (1 << n);
+        x = (x + 1.618) * 1.9
+        # golden ratio stuff
+        s -= 7046029254386353131
+    return noise / ((1 << octaves) - 1.0)
