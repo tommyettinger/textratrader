@@ -12,6 +12,7 @@ class_name BitUtils
 ## Arithmetic shift right.
 ##
 ## This is equivalent to the [code]>>[/code] operator in Java and JavaScript.
+##
 ## n, the value to be shifted, is permitted to be negative; if so, its
 ## sign will be extended.
 ## amt, the amount to shift, will be masked to ensure it is between 0 and 63.
@@ -23,6 +24,7 @@ static func shr(n: int, amt: int) -> int:
 ## Unsigned (logical) shift right.
 ##
 ## This is equivalent to the [code]>>>[/code] operator in Java and JavaScript.
+##
 ## n, the value to be shifted, is permitted to be negative; if so, its
 ## sign will not be extended.
 ## amt, the amount to shift, will be masked to ensure it is between 0 and 63.
